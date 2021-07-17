@@ -1,0 +1,461 @@
+@import "fonts";
+@import "_/*";
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: $default-font;
+  color: $black;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#svg-sprite {
+  width: 0;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+.app-inner {
+  flex: 1 0 auto;
+}
+
+.page-content {
+  @include respond($mobile) {
+    padding: 80px 0 156px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 60px 0;
+  }
+
+  .page-title {
+    font-style: normal;
+    font-weight: bold;
+    @include respond($mobile) {
+      font-size: 30px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 25px;
+    }
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: $black;
+  }
+
+  .page-subtitle {
+    font-style: normal;
+    font-weight: 500;
+    @include respond($mobile) {
+      font-size: 20px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 18px;
+    }
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    margin: 26px 0 20px;
+    max-width: 440px;
+    color: $gray;
+  }
+}
+
+h1 {
+  color: $white;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 130%;
+  @include respond($mobile) {
+    font-size: 40px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 30px;
+  }
+}
+
+.top-panel {
+  background: linear-gradient(180deg, #0070CB 0.01%, #0D91D8 58.32%, #43A7E0 100%);
+  box-shadow: 2px -4px 15px rgba(0, 23, 41, 0.05), 3px 1px 5px rgba(0, 23, 41, 0.1);
+
+  @include respond($mobile) {
+    min-height: 241px;
+    padding: 60px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 24px 0;
+  }
+}
+
+.breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include respond($mobile) {
+    margin-bottom: 40px;
+  }
+  @include respond(0, $mobile) {
+    margin-bottom: 15px;
+  }
+
+  span {
+    color: transparentize($white, .4);
+    font-weight: 500;
+  }
+
+  svg {
+    margin: 0 10px;
+    pointer-events: none;
+    display: block;
+  }
+
+  a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+nav {
+  background: $nav;
+  min-height: 50px;
+  border: 1px solid rgba(81, 72, 46, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  span {
+    height: 20px;
+    width: 1px;
+    background: transparentize($gray, .5);
+  }
+
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $gray;
+    line-height: 22px;
+
+    &:last-child {
+      margin-right: 48px;
+    }
+
+    &:hover {
+      background: linear-gradient(180deg, #0070CB 0.01%, #0D91D8 58.32%, #43A7E0 100%);;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &.active {
+      font-weight: 600;
+      background: linear-gradient(180deg, #0070CB 0.01%, #0D91D8 58.32%, #43A7E0 100%);;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+#map {
+  @include respond($mobile) {
+    min-height: 580px;
+  }
+  @include respond(0, $mobile) {
+    min-height: 280px;
+  }
+  width: 100%;
+}
+
+footer {
+  flex: 0 0 auto;
+
+  @include respond(0, $mobile) {
+    padding: 30px 0 20px 0;
+    .logo {
+      margin-bottom: 20px;
+
+      img {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .container {
+    @include respond(0, $mobile) {
+      flex-direction: column;
+
+      .section {
+        align-items: center;
+        margin: 12px 0;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1200px + ($container-padding * 2);
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header {
+  .section {
+    @include respond(0, $mobile) {
+      display: none;
+    }
+  }
+
+  .logo {
+    margin-right: 12px;
+  }
+
+  .logo-text {
+    @include respond(0, $mobile) {
+      margin-left: 14px;
+    }
+  }
+}
+
+.burger {
+  cursor: pointer;
+  width: 34px;
+  @extend .pure-button;
+
+  .burger-line {
+    background: $black;
+    height: $burger-line-height;
+    width: 100%;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include respond($mobile) {
+    display: none;
+  }
+}
+
+.app-panel {
+  min-height: 100px;
+  display: flex;
+  @extend .flex-align-center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  align-items: flex-start;
+  @include respond(0, $mobile) {
+    text-align: center;
+  }
+
+  .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $link;
+
+    @include respond($mobile) {
+      padding-left: 28px;
+    }
+
+    @include respond(0, $mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include respond($mobile) {
+      margin-bottom: 6px;
+    }
+
+    svg {
+      display: block;
+      @include respond(0, $mobile) {
+        margin-bottom: 4px;
+      }
+      @include respond($mobile) {
+        margin-right: 8px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        display: block;
+      }
+    }
+
+  }
+}
+
+footer {
+  .item:first-child {
+    @include respond(0, $mobile) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .logo-text {
+    @include respond(0, $mobile) {
+      text-align: center;
+    }
+  }
+
+  .logo {
+    @include respond(0, $mobile) {
+      flex-direction: column;
+    }
+    @include respond($mobile) {
+      padding-right: 12px;
+    }
+  }
+}
+
+header {
+  .item:first-child {
+    @include respond(0, $mobile) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.resource-link {
+  margin-top: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    display: block;
+  }
+
+  @include respond(0, $mobile) {
+    flex: 1;
+  }
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: .3px;
+  line-height: 22px;
+  @include respond(1366px) {
+    margin-left: 24px;
+  }
+  @include respond($mobile, 1366px) {
+    max-width: 150px;
+  }
+  @include respond($mobile, 1366px) {
+    margin-left: 16px;
+  }
+}
+
+.button {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: $black;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow $time ease;
+
+  &:hover {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.14);
+  }
+
+  &-orange {
+    background: linear-gradient(91deg, #FFD129 -8.14%, #F5C000 87.87%);
+    border-radius: 3px;
+  }
+}
+
+.checkbox {
+  color: $white;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  margin: 20px 0 30px 0;
+  padding-left: 32px;
+  position: relative;
+
+  .privacy-link {
+    color: $policy-link;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid $white;
+  }
+
+  input:checked + span {
+    background: url(../sprite/sprite.svg#check) no-repeat center / contain;
+  }
+}

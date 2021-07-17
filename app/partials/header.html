@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><!--#echo var="title" --> &mdash; СХТ</title>
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+
+<div id="svg-sprite">
+    <!--#include virtual="/sprite/sprite.svg" -->
+</div>
+
+<div id="app">
+    <div class="app-inner">
+        <header class="app-panel">
+            <div class="container">
+                <!--#include virtual="/partials/app-panel.html" -->
+
+                <button class="burger" aria-label="Меню сайта">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <a href="">Главная</a>
+                <span></span>
+                <a href="">Каталог</a>
+                <span></span>
+                <a href="">Партнеры</a>
+                <span></span>
+                <a href="">Сервис</a>
+                <span></span>
+                <a href="">Магазин</a>
+                <span></span>
+                <a href="">Новости</a>
+                <span></span>
+                <a href="" class="active">Контакты</a>
+            </div>
+        </nav>
+        <div class="top-panel">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="/">Главная</a>
+                    <svg width="16" height="16"><use xlink:href="#left"></use></svg>
+                    <span>Контакты</span>
+                </div>
+                <h1>Контакты</h1>
+            </div>
+        </div>

@@ -1,0 +1,175 @@
+@import "variables";
+@import "mixins";
+
+.contacts-block {
+
+  .contacts-grid {
+    display: grid;
+    grid-row-gap: 22px;
+
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 8px;
+  }
+
+  .email-value {
+    margin-top: 7px;
+
+    svg {
+      transform: translateY(3px);
+    }
+  }
+
+  .clock-value {
+    svg {
+      transform: translateY(2px);
+    }
+  }
+
+  .phone-value {
+    svg {
+      transform: translateY(2px);
+    }
+  }
+
+  .value {
+    position: relative;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $gray;
+    display: flex;
+    padding-left: 28px;
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      line-height: 27px;
+      letter-spacing: 0.02em;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 25px;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: block;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .columns {
+
+    @include respond(1120px) {
+      display: flex;
+    }
+
+    .first {
+
+      @include respond($mobile) {
+        max-width: 716px;
+        width: 100%;
+        padding-right: 40px;
+      }
+
+      .button {
+        max-width: 226px;
+      }
+    }
+
+    .last {
+      @include respond(0, 1120px) {
+        margin-top: 50px;
+      }
+      @include respond(1120px) {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 7px;
+      }
+    }
+  }
+
+  .contacts-image {
+    margin: 26px 0 36px 0;
+    max-width: 100%;
+  }
+
+}
+
+.shop {
+  color: $shop-color;
+  font-weight: 400;
+  margin-left: 10px;
+  letter-spacing: 0.02em;
+  font-size: 15px;
+  line-height: 25px;
+
+  pointer-events: none;
+}
+
+.contact-form {
+  @extend .sky-gradient;
+  width: 100%;
+  border-radius: 3px;
+
+  @include respond($mobile) {
+    height: 520px;
+    padding: 60px 38px;
+    max-width: 486px;
+  }
+  @include respond(0, $mobile) {
+    padding: 25px 20px;
+  }
+
+  input {
+    height: 42px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 8px 15px 18px 15px;
+
+    &::placeholder {
+      color: transparentize($black, .5);
+    }
+  }
+
+  .input {
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    min-height: 84px;
+  }
+}

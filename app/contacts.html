@@ -1,0 +1,73 @@
+<!--#set var="title" value="Контакты" -->
+<!--#include virtual="/partials/header.html" -->
+
+<div class="page-content">
+    <div class="container">
+        <div class="page-title">Есть вопрос или предложение?</div>
+        <div class="page-subtitle">Оставьте заявку, наш специалист свяжется с Вами в ближайшее время</div>
+
+        <div class="contacts-block">
+            <div class="columns">
+
+                <div class="column first">
+                    <div class="contacts-grid">
+                        <div class="item">
+                            <div class="label">По вопросам сотрудничества:</div>
+                            <div class="value phone-value">
+                                <svg><use xlink:href="#clock"></use></svg>
+                                <div class="list">
+                                    <a href="tel:8 (3842) 36-90-70">8 (3842) 36-90-70</a>
+                                    <a href="tel:8 (3842) 36-91-94">8 (3842) 36-91-94 <span class="shop">(магазин)</span></a>
+                                    <a href="tel:8 (3842) 36-33-74">8 (3842) 36-33-74</a>
+                                </div>
+                            </div>
+                            <div class="value email-value"><svg><use xlink:href="#letter"></use></svg><a href="mailto:tksxt@yandex.ru">tksxt@yandex.ru</a></div>
+                        </div>
+                        <div class="item">
+                            <div class="label">График работы магазина:</div>
+                            <div class="value clock-value">
+                                <svg><use xlink:href="#clock"></use></svg>
+                                <div class="list">
+                                    <div><b>Пн-пт:</b> с 8-30 до 17-00</div>
+                                    <div><b>Сб:</b> с 9-00 до 15-00</div>
+                                    <div><b>Вс:</b> выходной</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="label">Адрес офиса и магазина:</div>
+                            <div class="value"><svg><use xlink:href="#place"></use></svg>г. Кемерово, Кузнецкий проспект, 22</div>
+                        </div>
+                        <div class="item">
+                            <div class="label">Подписывайтесь на наши соц. сети</div>
+                            <a href="/" target="_blank" rel="noopener" class="value"><svg><use xlink:href="#in_filled"></use></svg></a>
+                        </div>
+                    </div>
+                    <img src="images/contacts-image.jpg" class="contacts-image" alt="">
+                    <a href="" class="button button-orange" download="Реквизиты СХТ">Скачать реквизиты</a>
+                </div>
+                <div class="column last">
+                    <form action="" class="contact-form">
+                        <input type="hidden" name="action" value="feedback">
+                        <input class="input" type="text" name="firstname" placeholder="Ваше имя">
+                        <input required class="input" type="tel" name="phone" placeholder="Ваш телефон">
+                        <input class="input" type="email" name="email" placeholder="Ваш e-mail">
+                        <textarea name="message" placeholder="Сообщение"></textarea>
+                        <label class="checkbox">
+                            <input checked required type="checkbox">
+                            <span></span>
+                            Согласен с условиями обработки&nbsp;<a href="/" class="privacy-link">персональных данных</a>
+                        </label>
+                        <button type="submit" class="button button-orange">Связаться с нами</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="css/leaflet.min.css">
+<div id="map" data-lat="55.361585" data-lng="86.071127"></div>
+
+<!--#include virtual="/partials/footer.html" -->
