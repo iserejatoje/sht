@@ -1,0 +1,87 @@
+@import "_/variables";
+@import "_/mixins";
+@import "_/classes";
+
+.partners-block {
+
+  .partners-grid {
+    display: grid;
+    grid-gap: 24px;
+
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .item {
+      background: $white;
+      box-shadow: 2px 7px 12px rgba(180, 180, 180, 0.15), 0 15px 25px rgba(113, 113, 113, 0.05);
+      transition: box-shadow $time ease;
+
+      @include respond($mobile) {
+        min-height: 512px;
+        padding: 40px;
+      }
+      @include respond(0, $mobile) {
+        padding: 20px;
+      }
+
+      &:hover {
+        box-shadow: 17px 36px 28px rgba(193, 193, 193, 0.23), 0 6px 25px rgba(113, 113, 113, 0.14);
+      }
+    }
+
+    .title {
+      font-style: normal;
+      font-weight: 600;
+      @include respond($mobile) {
+        font-size: 27px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 19px;
+      }
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $gray;
+      margin-bottom: 20px;
+    }
+
+    .image {
+
+      @include respond($mobile) {
+        height: 120px;
+        margin-bottom: 10px;
+      }
+      @include respond(0, $mobile) {
+        margin-bottom: 18px;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      font-style: normal;
+      max-width: 436px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      color: $black;
+      padding-bottom: 22px;
+    }
+
+    .partner-link {
+      @extend .sky-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border-bottom: 1px solid #43a7e0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+  }
+
+}
