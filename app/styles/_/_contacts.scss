@@ -76,11 +76,6 @@
     }
   }
 
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .columns {
 
     @include respond(1120px) {
@@ -88,6 +83,10 @@
     }
 
     .first {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
 
       @include respond($mobile) {
         max-width: 716px;
@@ -142,35 +141,8 @@
     padding: 60px 38px;
     max-width: 486px;
   }
+
   @include respond(0, $mobile) {
     padding: 25px 20px;
-  }
-
-  input {
-    height: 42px;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    border-radius: 3px;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 8px 15px 18px 15px;
-
-    &::placeholder {
-      color: transparentize($black, .5);
-    }
-  }
-
-  .input {
-    margin-bottom: 20px;
-  }
-
-  textarea {
-    min-height: 84px;
   }
 }

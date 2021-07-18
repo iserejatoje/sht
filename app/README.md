@@ -4,5 +4,6 @@
 - [Карточка товара](https://iserejatoje.github.io/sht/card.html)
 - [Новости](https://iserejatoje.github.io/sht/news.html)
 - [Карточка новости](https://iserejatoje.github.io/sht/article.html)
+- [Сервис](https://iserejatoje.github.io/sht/service.html)
 
 Made with ❤️ by Atom Web Studio

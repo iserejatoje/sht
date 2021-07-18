@@ -60,14 +60,16 @@
                 <div class="column last">
                     <form action="" class="contact-form">
                         <input type="hidden" name="action" value="feedback">
-                        <input class="input" type="text" name="firstname" placeholder="Ваше имя">
-                        <input required class="input" type="tel" name="phone" placeholder="Ваш телефон">
-                        <input class="input" type="email" name="email" placeholder="Ваш e-mail">
+                        <input class="input" type="text" name="firstname" placeholder="Имя">
+                        <input required class="input" type="tel" name="phone" placeholder="Телефон">
+                        <input class="input" type="email" name="email" placeholder="E-mail">
                         <textarea name="message" placeholder="Сообщение"></textarea>
-                        <label class="checkbox">
+                        <label class="checkbox checkbox-sunny">
                             <input checked required type="checkbox">
-                            <span></span>
-                            Согласен с условиями обработки&nbsp;<a href="/" class="privacy-link">персональных данных</a>
+                            <span>
+                                <svg width="12" height="10"><use xlink:href="#check"></use></svg>
+                            </span>
+                            Согласен с условиями обработки&nbsp;<a href="/" class="privacy-link" target="_blank">персональных данных</a>
                         </label>
                         <button type="submit" class="button button-orange">Связаться с нами</button>
                     </form>
