@@ -50,31 +50,6 @@
     color: $news-color;
   }
 
-  .detail-link {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-    color: $black;
-    text-decoration: none;
-    margin-top: auto;
-    display: inline-flex;
-    align-items: center;
-    padding-top: 15px;
-
-    &:hover {
-      svg {
-        transform: translateX(5px);
-      }
-    }
-
-    svg {
-      transition: transform $time ease;
-      margin-left: 6px;
-    }
-  }
-
   a {
     text-decoration: none;
   }

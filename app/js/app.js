@@ -1,5 +1,6 @@
 import IMask from 'imask'
-// import * as $ from 'jquery/dist/jquery.slim.min'
+import $ from 'jquery/dist/jquery'
+import selectric from '../js/jquery.selectric.min'
 import {initMap} from './map'
 
 const phoneMask = document.querySelectorAll('[type="tel"]')
@@ -8,6 +9,7 @@ phoneMask.forEach(element => IMask(element, {
 }))
 
 document.addEventListener('DOMContentLoaded', () => {
-    // initTrainEvent()
     initMap()
 })
+
+$('select').selectric()
