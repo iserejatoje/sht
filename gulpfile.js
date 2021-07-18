@@ -45,7 +45,6 @@ function scripts() {
         .pipe(
             webpack({
                 mode: "production",
-                // mode: "development",
                 performance: {hints: false},
                 module: {
                     rules: [
@@ -108,7 +107,7 @@ function buildcopy() {
 async function buildhtml() {
     let includes = new ssi("app/", "docs/", "/**/*.html");
     includes.compile();
-    del("docs/parts", {force: true});
+    del("docs/partials", {force: true});
 }
 
 function cleandocs() {

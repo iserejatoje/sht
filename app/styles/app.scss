@@ -39,10 +39,10 @@ html {
 
 .page-content {
   @include respond($mobile) {
-    padding: 80px 0 156px 0;
+    padding: 80px 0 150px 0;
   }
   @include respond(0, $mobile) {
-    padding: 40px 0 60px 0;
+    padding: 30px 0 30px 0;
   }
 
   .page-title {
@@ -87,7 +87,7 @@ h1 {
     font-size: 40px;
   }
   @include respond(0, $mobile) {
-    font-size: 30px;
+    font-size: 23px;
   }
 }
 
@@ -119,21 +119,25 @@ h1 {
   span {
     color: transparentize($white, .4);
     font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   svg {
-    margin: 0 10px;
+    fill: $white;
     pointer-events: none;
     display: block;
+    margin-right: 9px;
   }
 
   a {
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
-    line-height: 130%;
+    line-height: 140%;
     color: $white;
     text-decoration: none;
+    letter-spacing: 0.02em;
+    margin-right: 9px;
   }
 }
 

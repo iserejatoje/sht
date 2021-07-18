@@ -1,7 +1,5 @@
 import IMask from 'imask'
-import * as $ from 'jquery/dist/jquery.slim.min'
-// import Swiper from 'swiper'
-// import SwiperCore, {Navigation, Pagination} from 'swiper/core'
+// import * as $ from 'jquery/dist/jquery.slim.min'
 import {initMap} from './map'
 
 const phoneMask = document.querySelectorAll('[type="tel"]')
