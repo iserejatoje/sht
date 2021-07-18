@@ -133,40 +133,6 @@
     line-height: 150%;
     letter-spacing: 0.02em;
 
-    ol {
-      list-style: none;
-      counter-reset: ol;
-      margin: 0;
-      padding: 0;
-
-      li {
-        position: relative;
-        counter-increment: ol;
-        font-style: normal;
-        font-weight: 300;
-        @include respond($mobile) {
-          font-size: 21px;
-          padding-left: 40px;
-        }
-        @include respond(0, $mobile) {
-          font-size: 16px;
-          padding-left: 32px;
-        }
-        line-height: 175%;
-        letter-spacing: 0.02em;
-
-        &:before {
-          content: "0" counter(ol);
-          position: absolute;
-          left: 0;
-          font-weight: 600;
-          @extend .sky-gradient;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
-    }
-
     p {
       margin-bottom: 34px;
     }
