@@ -8,6 +8,13 @@
     left: 15px;
   }
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    svg {
+      fill: $white;
+    }
+  }
+
   .swiper-button-next {
     right: 15px;
 

@@ -1,0 +1,107 @@
+@import "_/variables";
+@import "_/mixins";
+@import "_/classes";
+
+.news-grid {
+  display: grid;
+  grid-gap: 24px;
+
+  @include respond($mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(0, $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  .date {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    @extend .sky-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 15px;
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 600;
+    @include respond($mobile) {
+      font-size: 21px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 18px;
+    }
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: $news-color;
+    margin-top: 20px;
+  }
+
+  .text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    margin-top: 15px;
+    color: $news-color;
+  }
+
+  .detail-link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: $black;
+    text-decoration: none;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 15px;
+
+    &:hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+
+    svg {
+      transition: transform $time ease;
+      margin-left: 6px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .item {
+    transition: box-shadow $time ease;
+    box-shadow: 2px 7px 12px rgba(180, 180, 180, 0.15), 0 15px 25px rgba(113, 113, 113, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include respond($mobile) {
+      padding: 50px;
+      min-height: 588px;
+    }
+
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
+
+    &:hover {
+      box-shadow: 17px 36px 28px rgba(193, 193, 193, 0.23), 0 6px 25px rgba(113, 113, 113, 0.14);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+}
