@@ -2,6 +2,10 @@
 @import "_/mixins";
 @import "_/classes";
 
+.news-block + .pagination {
+  padding-top: 40px;
+}
+
 .news-grid {
   display: grid;
   grid-gap: 24px;
