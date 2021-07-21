@@ -11,12 +11,17 @@
   .manufacturer-text {
     font-style: normal;
     font-weight: 300;
-    font-size: 18px;
+    @include respond($mobile) {
+      font-size: 18px;
+      margin-bottom: 80px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 16px;
+      margin-bottom: 45px;
+    }
     line-height: 150%;
     letter-spacing: 0.02em;
     color: $black;
-    margin-bottom: 80px;
-
     p {
       margin-bottom: 28px;
     }
