@@ -8,5 +8,6 @@
 - [Партнеры](https://iserejatoje.github.io/sht/partners.html)
 - [Карточка бренда](https://iserejatoje.github.io/sht/manufacturer.html)
 - [Категория](https://iserejatoje.github.io/sht/category.html)
+- [Каталог](https://iserejatoje.github.io/sht/catalog.html)
 
 Made with ❤️ by Atom Web Studio
