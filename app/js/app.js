@@ -10,6 +10,11 @@ phoneMask.forEach(element => IMask(element, {
 
 document.addEventListener('DOMContentLoaded', () => {
     initMap()
+
+    $('.view-cert').click(function () {
+        $(this).parents('.swiper-slide').find('[data-imagebox]').click()
+        return false;
+    })
 })
 
 $('select').selectric()

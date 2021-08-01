@@ -223,8 +223,16 @@ nav {
 }
 
 #map {
+  &.wild {
+    @include respond($mobile) {
+      min-height: 620px;
+    }
+  }
+
   @include respond($mobile) {
-    min-height: 580px;
+    &:not(.wild) {
+      min-height: 580px;
+    }
   }
   @include respond(0, $mobile) {
     min-height: 280px;
@@ -538,6 +546,40 @@ header {
   }
 }
 
+.pagination.white {
+  margin-top: 40px;
+
+  .prev,
+  .next {
+    background: #fff !important;
+
+    svg {
+      fill: $black;
+    }
+  }
+
+  .pagination-dot {
+    background: transparentize($white, .5) !important;
+  }
+
+
+  .swiper-pagination-bullet-active,
+  .active {
+    &:before {
+      background: $white !important;
+    }
+  }
+
+
+  .swiper-pagination-bullet-active,
+  .active {
+    &:after {
+      background: #37a2de !important;
+    }
+  }
+
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -568,8 +610,9 @@ header {
       height: 44px;
     }
 
-    @extend .sky-gradient;
     margin-right: 10px;
+
+    @extend .sky-gradient;
   }
 
   .next {
@@ -966,4 +1009,784 @@ form {
 
 .category-block > .pagination {
   padding-top: 40px;
+}
+
+.form_wrapper {
+  &.sky {
+    @extend .sky-gradient;
+  }
+
+  &:not(.sky) {
+    form {
+      @extend .sky-gradient;
+    }
+  }
+
+  @include respond($mobile) {
+    &:not(.wild) {
+      padding: 80px 0 150px 0;
+    }
+    &.wild {
+      padding: 80px 0 280px 0;
+    }
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0;
+  }
+
+  form {
+    background: $form;
+    min-height: 438px;
+    border-radius: 3px;
+
+    @include respond($mobile) {
+      padding: 60px 78px;
+    }
+    @include respond(0, $mobile) {
+      padding: 30px 18px;
+    }
+
+  }
+
+  .row {
+    @include respond($mobile) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  textarea {
+    @include respond($mobile) {
+      min-height: 166px;
+    }
+    @include respond(0, $mobile) {
+      min-height: 100px;
+      margin-top: 20px;
+    }
+  }
+;
+
+  .column {
+    @include respond($mobile) {
+      max-width: calc(50% - 15px);
+      width: 100%;
+    }
+  }
+
+  input,
+  textarea {
+    background: $feedback-input;
+    border-radius: 3px;
+    border: 1px solid transparentize(#0d91d8, .5);
+  }
+
+  .button {
+    max-width: 261px;
+  }
+
+  .last {
+    padding-top: 10px;
+  }
+
+  > .row:first-child {
+    margin-bottom: 10px;
+  }
+
+  .end {
+    @include respond($mobile) {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 10px;
+    }
+
+  }
+
+  .column .row:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+
+    @include respond(0, $mobile) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    @include respond($mobile) {
+      margin-bottom: 40px;
+    }
+
+    a {
+      font-style: normal;
+      font-weight: 500;
+      @include respond($mobile) {
+        font-size: 21px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 18px;
+      }
+      line-height: 25px;
+      color: $form-link;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+
+      svg {
+        margin-right: 15px;
+      }
+
+      &:first-child {
+        @include respond($mobile) {
+          margin-right: 54px;
+        }
+        @include respond(0, $mobile) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .headline {
+    font-style: normal;
+    font-weight: 800;
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 30px;
+    }
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: $white;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .headline-bottom {
+    font-style: normal;
+    font-weight: 500;
+    @include respond($mobile) {
+      font-size: 20px;
+      margin-bottom: 36px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $light-gray;
+  }
+}
+
+.map-block {
+
+  .title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: $black;
+  }
+
+  .card {
+    @include respond($mobile) {
+      max-width: 366px;
+      width: 100%;
+      transform: translateY(-135px);
+      position: relative;
+      padding: 47px 60px 60px 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: -1000px;
+        z-index: -1;
+        background: #fffdf3;
+      }
+    }
+
+    @include respond(0, $mobile) {
+      padding: 25px 0;
+    }
+
+    .contacts-block {
+      margin-top: 40px;
+    }
+
+    .item:not(:last-child) {
+      margin-bottom: 28px;
+    }
+
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: $black;
+  }
+
+  .container {
+    @include respond($mobile) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 100000;
+    }
+  }
+}
+
+.white-block {
+  .center a {
+    color: #EFEFEF;
+  }
+
+  .headline,
+  .headline-bottom {
+    color: $black;
+  }
+
+  .checkbox {
+    font-weight: normal;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: #EFEFEF;
+
+    a {
+      color: #EFEFEF;
+    }
+  }
+}
+
+.certificates {
+  min-height: 755px;
+
+  @include respond($mobile) {
+    padding: 80px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-style: normal;
+    color: $white;
+    font-weight: 800;
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 25px;
+    }
+    line-height: 130%;
+    letter-spacing: 0.02em;
+  }
+
+  .subtitle {
+    font-style: normal;
+    font-weight: 500;
+    @include respond($mobile) {
+      font-size: 20px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 16px;
+    }
+    line-height: 168.5%;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-top: 25px;
+  }
+}
+
+.certificates-slider {
+  @include respond($mobile) {
+    margin-top: 50px;
+  }
+  @include respond(0, $mobile) {
+    margin-top: 30px;
+  }
+
+  .swiper-slide {
+    min-height: 335px;
+    background: $white;
+    flex-direction: column;
+    display: flex;
+
+    @include respond($mobile) {
+      padding: 28px 32px;
+    }
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
+
+    .text {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .content {
+      display: flex;
+
+      @include respond(0, 824px) {
+        flex-direction: column;
+      }
+
+      a {
+        padding: 10px 22px;
+        border-radius: 3px;
+        border: 1px solid $black;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-decoration: none;
+        color: #181200;
+
+        &:last-child {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    img {
+      @include respond(824px) {
+        margin-right: 15px;
+      }
+    }
+
+    .description {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 168.5%;
+      letter-spacing: 0.02em;
+      color: #483600;
+      margin-bottom: auto;
+
+      @include respond(0, $mobile) {
+        padding: 15px 0;
+      }
+
+    }
+
+    .title {
+      color: #181200;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 168.5%;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.partners-block {
+  @include respond($mobile) {
+    padding: 254px 0 180px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .partners-slider {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .swiper-slide {
+    padding: 10px;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 15px rgba(0, 23, 41, 0.05), 1px 1px 5px 1px rgba(0, 23, 41, 0.05);
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  .button {
+    max-width: 176px;
+  }
+
+  .pagination {
+    margin-top: 40px;
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 800;
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 25px;
+    }
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #181200;
+    margin-bottom: 40px;
+  }
+}
+
+.about {
+  min-height: 725px;
+  position: relative;
+
+  .button {
+    max-width: 232px;
+    margin-top: 45px;
+  }
+
+  .columns {
+    @include respond(1200px) {
+      display: flex;
+    }
+
+    .text {
+      max-width: 550px;
+    }
+
+    .text p {
+      margin-bottom: 22px;
+    }
+
+    .text,
+    .text p {
+      font-style: normal;
+      font-weight: normal;
+      @include respond(1366px) {
+        font-size: 18px;
+      }
+      @include respond(0, 1366px) {
+        font-size: 16px;
+      }
+      line-height: 160%;
+      letter-spacing: 0.02em;
+      color: #FFFDF3;
+    }
+
+    .column:first-child img {
+      position: absolute;
+
+      @include respond(1366px) {
+        top: -80px;
+        right: 89px;
+      }
+      @include respond(0, 1200px) {
+        display: none;
+      }
+      @include respond(1200px, 1366px) {
+        max-width: 114%;
+        right: 40px;
+      }
+    }
+
+    .column:first-child {
+      position: relative;
+    }
+
+    .column:last-child {
+      @include respond(1200px) {
+        padding-left: 15px;
+      }
+    }
+
+    .column {
+      flex: 1;
+    }
+  }
+
+  .info {
+    z-index: 1;
+    @include respond(1200px) {
+      position: absolute;
+      max-width: 490px;
+      bottom: -156px;
+      right: 102px;
+      padding: 56px 30px 58px 0;
+    }
+    @include respond(1200px) {
+      font-size: 18px;
+    }
+    @include respond(0, 1200px) {
+      font-size: 16px;
+    }
+    line-height: 160%;
+
+    @include respond(0, 1200px) {
+      padding: 0 0 25px 0;
+      color: $white;
+    }
+    @include respond(1200px) {
+      &:before {
+        content: '';
+        position: absolute;
+        background: #FFFDF3;
+        left: -600px;
+        right: -77px;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        box-shadow: 2px -4px 15px rgba(0, 23, 41, 0.05), 3px 1px 5px rgba(0, 23, 41, 0.1);
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 34px;
+    font-style: normal;
+    font-weight: 800;
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 32px;
+    }
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+
+  @include respond(1200px) {
+    padding: 80px 0;
+  }
+  @include respond(0, 1200px) {
+    padding: 40px 0;
+  }
+}
+
+.contacts-block {
+
+  .contacts-panel {
+    @include respond(0, $mobile) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .label {
+    font-style: normal;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 168.5%;
+  }
+
+  .email-value {
+    margin-top: 7px;
+
+    svg {
+      transform: translateY(3px);
+    }
+  }
+
+  .clock-value {
+    svg {
+      transform: translateY(2px);
+    }
+  }
+
+  .phone-value {
+    svg {
+      transform: translateY(2px);
+    }
+  }
+
+  .value {
+    position: relative;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: $gray;
+    display: flex;
+    padding-left: 28px;
+    line-height: 22px;
+
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      line-height: 27px;
+      letter-spacing: 0.02em;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 25px;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: block;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+.centered {
+  padding-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.numbers-grid {
+  max-width: 1200px;
+  min-height: 251px;
+  background: #FFFDF3;
+  box-shadow: 2px -4px 15px rgba(0, 23, 41, 0.05), 3px 1px 5px rgba(0, 23, 41, 0.1);
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(0, 1202px) {
+    margin: 30px auto 40px;
+  }
+  @include respond($mobile, 1202px) {
+    padding: 20px;
+    flex-wrap: wrap;
+    .cell {
+      width: 50%;
+      padding-right: 40px;
+    }
+  }
+  @include respond(0, $mobile) {
+    flex-wrap: wrap;
+    .cell {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    padding: 20px;
+
+  }
+
+  @include respond(1202px) {
+    margin: 0 auto 138px;
+    transform: translateY(-42px);
+    padding: 38px 100px;
+    .cell {
+      width: 100%;
+
+      &:nth-child(1) {
+        max-width: 240px;
+      }
+
+      &:nth-child(2) {
+        max-width: 267px;
+      }
+
+      &:nth-child(3) {
+        max-width: 310px;
+      }
+
+      &:nth-child(4) {
+        max-width: 180px;
+      }
+    }
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 999;
+    @include respond($mobile) {
+      font-size: 50px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 32px;
+    }
+    line-height: 168.5%;
+    letter-spacing: 0.05em;
+    color: #181200;
+  }
+
+  .text {
+    font-style: normal;
+    font-weight: 500;
+    @include respond($mobile) {
+      font-size: 20px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 18px;
+    }
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #483600;
+  }
+}
+
+.front-slider_block {
+  @include respond($mobile) {
+    padding: 80px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0;
+  }
+}
+
+.front-slider {
+
+  @include respond($mobile) {
+    min-height: 546px;
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 800;
+    @include respond($mobile) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 25px;
+    }
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #FFFEFC;
+    margin-bottom: 14px;
+    max-width: 680px;
+  }
+
+  .description {
+    font-style: normal;
+    margin-bottom: 35px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #FFFDF3;
+    max-width: 680px;
+  }
+
+  .button {
+    max-width: 232px;
+  }
 }

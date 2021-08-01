@@ -1,6 +1,7 @@
 <!--#set var="title" value="Магазин" -->
 <!--#include virtual="/partials/header.html" -->
 
+<link rel="stylesheet" href="css/swiper.min.css">
 <link rel="stylesheet" href="css/shop.min.css">
 
 <div class="top-panel">
@@ -10,22 +11,136 @@
             <svg width="16" height="16">
                 <use xlink:href="#left"></use>
             </svg>
-            <a href="/">Каталог</a>
-            <svg width="16" height="16">
-                <use xlink:href="#left"></use>
-            </svg>
-            <span>Почвообрабатывающая техника</span>
+            <span>Магазин</span>
         </div>
-        <h1>Почвообрабатывающая техника</h1>
+        <h1>Магазин</h1>
+        <div class="small">
+            Большой выбор запчастей и комплектующих для сельскохозяйственной техники
+        </div>
     </div>
 </div>
 
-<div class="page-content">
+<div class="shop-block">
     <div class="container">
-        <div class="shop-block">
+
+        <div class="shop-slider swiper-container">
+            <div class="swiper-wrapper">
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+                <a href="/" class="swiper-slide"><img src="images/shop-slider.jpg" alt=""></a>
+            </div>
+            <div class="pagination">
+                <a href="" class="prev"><svg width="16" height="16"><use xlink:href="#arrow"></use></svg></a>
+                <div class="pagination-pages">
+                    <a href="" class="pagination-dot"></a>
+                </div>
+                <a href="" class="next"><svg width="11" height="11"><use xlink:href="#arrow"></use></svg></a>
+            </div>
+        </div>
+
+        <div class="shop-title">В наличии и под заказ запчасти к сельхозтехнике:</div>
+
+        <div class="shop-grid">
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+            <div class="cell">
+                <div class="image">
+                    <img src="images/shop.jpg" alt="">
+                </div>
+                <div class="title">Шпагат полипропиленовый сеновязальный</div>
+            </div>
+        </div>
+
+        <div class="price-block">
+            <a href="" class="button button-orange">Скачать прайс-лист</a>
+            <div class="text"><span>*</span> Информация о наличии и ценах, размещенная в прайс-листе, не является публичной офертой. Уточните информацию у наших специалистов
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="/partials/form-wild.html" -->
+
+<link rel="stylesheet" href="css/leaflet.min.css">
+<div class="map-block">
+    <div class="container">
+        <div class="card">
+            <div class="title">Контакты</div>
+
+            <div class="contacts-block">
+                <div class="column first">
+                    <div class="contacts-panel">
+                        <div class="item">
+                            <div class="label">Адрес офиса и магазина:</div>
+                            <div class="value"><svg><use xlink:href="#place_black"></use></svg>г. Кемерово, Кузнецкий проспект, 22</div>
+                        </div>
+                        <div class="item">
+                            <div class="label">По вопросам сотрудничества:</div>
+                            <div class="value phone-value">
+                                <svg><use xlink:href="#clock_black"></use></svg>
+                                <div class="list">
+                                    <a href="tel:8 (3842) 36-90-70">8 (3842) 36-90-70</a>
+                                    <a href="tel:8 (3842) 36-91-94">8 (3842) 36-91-94 <span class="shop">(магазин)</span></a>
+                                    <a href="tel:8 (3842) 36-33-74">8 (3842) 36-33-74</a>
+                                </div>
+                            </div>
+                            <div class="value email-value"><svg><use xlink:href="#mail_black"></use></svg><a href="mailto:tksxt@yandex.ru">tksxt@yandex.ru</a></div>
+                        </div>
+                        <div class="item">
+                            <div class="label">График работы магазина:</div>
+                            <div class="value clock-value">
+                                <svg><use xlink:href="#clock_black"></use></svg>
+                                <div class="list">
+                                    <div><b>Пн-пт:</b> с 8-30 до 17-00</div>
+                                    <div><b>Сб:</b> с 9-00 до 15-00</div>
+                                    <div><b>Вс:</b> выходной</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="label">Подписывайтесь на наши соц. сети</div>
+                            <a href="/" target="_blank" rel="noopener" class="value"><svg><use xlink:href="#i_black"></use></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
+    <div id="map" data-lat="55.361585" data-lng="86.071127"></div>
 </div>
 
 <!--#include virtual="/partials/footer.html" -->

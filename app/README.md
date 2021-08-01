@@ -9,5 +9,7 @@
 - [Карточка бренда](https://iserejatoje.github.io/sht/manufacturer.html)
 - [Категория](https://iserejatoje.github.io/sht/category.html)
 - [Каталог](https://iserejatoje.github.io/sht/catalog.html)
+- [Магазин](https://iserejatoje.github.io/sht/shop.html)
+- [Главная](https://iserejatoje.github.io/sht/frontpage.html)
 
 Made with ❤️ by Atom Web Studio
